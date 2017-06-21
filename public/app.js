@@ -14,10 +14,16 @@ var onLoad = function(){
 
 var populateList = function(beers) {
   var div = document.getElementById('main');
+
   beers.forEach(function(beer) {
     var li = document.createElement('li');
+    var ul = document.createElement('ul');
+    var img = document.createElement('img');
     li.innerText = "Beer name: " + beer.name;
+    img.src = beer.image_url;
     div.appendChild(li);
+    li.appendChild(ul);
+    ul.appendChild(img);
   });
 
   return div;
